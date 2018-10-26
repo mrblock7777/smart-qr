@@ -1,0 +1,7 @@
+{
+  "name": "smart-qr",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
