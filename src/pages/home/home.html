@@ -1,14 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      QR Scanner
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="popup($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-item>
+    <ion-img src="../assets/imgs/default_qrcode.png"></ion-img>
+  </ion-item>
+  <ion-item>
+    <button ion-button color="primary" (click)="startScan()">Start QR Scan</button>
+  </ion-item>
 </ion-content>

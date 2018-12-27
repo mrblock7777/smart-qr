@@ -1,0 +1,51 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+    <ion-item>
+      <ion-label>Full Name</ion-label>
+      <ion-input [(ngModel)]="full_name" name="full_name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email Address</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Matric ID</ion-label>
+      <ion-input [(ngModel)]="matric" name="matric" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>College</ion-label>
+      <ion-input [(ngModel)]="college" name="college" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Faculty</ion-label>
+      <ion-input [(ngModel)]="faculty" name="faculty" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Confirm Password</ion-label>
+      <ion-input type="password" [(ngModel)]="confirm_password" name="confirm_password" required></ion-input>
+    </ion-item>
+    <p *ngIf="(password != confirm_password)" ion-text text-left color="danger">Password does not match</p>
+    <div text-right>
+      <button ion-button [disabled]="!registerForm.valid || (password != confirm_password)">Register</button>
+    </div>
+  </form>
+</ion-content>
